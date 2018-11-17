@@ -1,0 +1,27 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/estilos-login.css' %}" type="text/css">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Ingrese</h2>
+<!-- #otra forma de realilzar la accion -->  
+<div class="formato">
+<form class="site-form" action="{% url 'accounts:login' %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    {% if request.GET.next %}
+        <input type="hidden" name="next" value="{{request.GET.next}}">
+    {% endif %}
+    <input type="submit" value="Ingresa">
+</form>
+</div>
+
+    </form>
+</body>
+</html>

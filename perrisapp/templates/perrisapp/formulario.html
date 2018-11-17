@@ -1,0 +1,103 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>formulario de contacto</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/estilos_form.css' %}">
+    
+</head>
+
+<body>
+    <!-- <form id="formulario-perris">
+    
+                <b><br>
+                    <form id="formulario-perris" action="index.html" method="POST" onsubmit="return validar();">
+                        <br>
+                        <h2>Formulario de Contacto</h2>
+                        <h4>¡Postula para adoptar una mascota!</h4>
+                        <br>
+                          <a href="{% url 'perrisapp:index' %}" target="_self"><input type="button" value="VOLVER" id="boton"></a>
+                        <label>RUT:</label>
+                        <input type="text" name="rut" required pattern="\d{3,8}-[\d|kK]{1}" placeholder="Ingrese su RUT">
+                        <br>
+                        <br>
+                        <label>Nombre Completo:</label>
+                        <input type="text" name="nombre" required pattern="[A-Za-z\s]+" placeholder="Ingrese su nombre">
+                        <br>
+                        <br>
+                        <label>Fecha de Nacimiento:</label>
+                        <input type="date" name="fecha" id="fecha" min="1900-01-01" max="2000-12-31">
+                        <br>
+                        <br>
+                        <label>Teléfono de contacto:</label>
+                        <input type="text" name="fono" required pattern="[0-9]+" placeholder="Ingrese teléfono">
+                        <br>
+                        <br>
+                        <label>Correo Electrónico:</label>
+                        <input type="text" name="mail" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
+                            placeholder="Ingrese correo electrónico">
+                        <br>
+                        <br>
+                        <label>Región:</label>
+                        <select id="regiones" name="region">
+                            <option value="0">Arica y Parinacota</option>
+                            <option value="1">Tarapacá</option>
+                            <option value="2">Antofagasta</option>
+                            <option value="3">Atacama</option>
+                            <option value="4">Coquimbo</option>
+                            <option value="5">Valparaíso</option>
+                            <option value="6">Libertador Gral. Bernardo O'Higgins</option>
+                            <option value="7">Maule</option>
+                            <option value="8">Bío Bío</option>
+                            <option value="9">Araucanía</option>
+                            <option value="10">Los Ríos</option>
+                            <option value="11">Los Lagos</option>
+                            <option value="12">Aisén del Gral. Carlos Ibáñez del Campo</option>
+                            <option value="13">Magallanes y Antártica Chilena</option>
+                            <option value="14">Metropolitana de Santiago</option>
+                        </select>
+                        <br>
+                        <br>
+                        <label>Ciudad:</label>
+                        <select id="comunas" name="ciudad"></select>
+                        <br>
+                        <br>
+                        <label>Tipo de Vivienda:</label>
+                        <select name="vivienda">
+                            <option value="0">Casa con patio grande</option>
+                            <option value="1">Casa con patio pequeño</option>
+                            <option value="2">Casa sin patio</option>
+                            <option value="3">Departamento</option>
+                        </select>
+                        <br>
+                        <br>
+                        <div id="other">
+                            <button id="boton" type="submit">Enviar Datos</button>
+                        </form>
+                        </div>
+       </b>
+    </form> -->
+    <form id="formulario-perris" class="site-form" action="" method="post">
+            <br>
+            <h2>Formulario de Contacto</h2>
+            <h4>¡Postula para adoptar una mascota!</h4>
+            <br>
+            <a href="{% url 'perrisapp:index' %}" target="_self"><input type="button" value="VOLVER" id="boton"></a>
+        {% csrf_token %}
+        {{ form }}
+        <h2>Nota: Cuéntanos que te motivo a adoptar una mascota y te contactaremos a la brevedad</h2>
+        <div id="other">
+                <button id="boton" type="submit">Enviar Datos</button>
+        </div>
+    </form>
+</body>
+
+</html>
+</html>

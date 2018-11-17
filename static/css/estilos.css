@@ -1,0 +1,264 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+}
+
+/*--------------seccion1------------------*/
+
+header {
+    background: #85d4b7;
+    padding: 15px 0;
+}
+
+header div nav ul li a:hover {
+    background-color: #ffffff;
+    color: #4fb98d;
+}
+
+.logo{
+   display: flex;
+    justify-content: space-around;
+    align-items: center; 
+}
+
+.menu{
+    float: right;
+}
+
+.menu ul li{
+     display: inline-block;
+}
+
+.menu ul li a{
+      color: #ffffff;
+    padding-left: 10px;
+}
+
+
+/*--------------seccion2------------------*/
+
+.slides{
+    background: #5CCCAF;
+    
+}
+
+.slides img {
+    width: 110%;
+    height: 350px;
+}
+
+
+/*--------------seccion3------------------*/
+
+.contenedor-info{
+    background: #5CCCAF;
+}
+.info {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+}
+
+.redes-sociales {
+    display: flex;
+    flex-direction: row;
+}
+
+.redes-sociales img {
+    padding: 5px;
+    border-radius: 50px;
+    background-color: white;
+    margin: 10px;
+}
+
+/*--------------rescate y crow------------------*/
+
+.contenedor {
+    color: black;
+    background-color: white;
+    height: 400px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contenedor 
+.rescate p, 
+.crow p {
+    color: #5c5757;
+    font-size: 11px;
+}
+
+.bienvenidos img{
+    width: 50%;
+    padding: 10px;
+    background-color: white;
+}
+
+.rescate {
+    width: 48%;
+    padding: 10px;
+    text-align: right;
+}
+
+.crow {
+    width: 48%;
+    padding: 10px;
+    margin-bottom: auto;
+}
+
+.rescate h4, 
+.crow h4 {
+    color: #b1b1b1;
+}
+
+.btn_campanas{
+    margin: 20px 0px;
+    padding: 10px 20px;
+    border: solid 2px #000;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/*-----------galeria------------*/
+.galeria {
+    background-color: #5CCCAF;
+    padding: 15px;
+}
+
+.gal{
+    width: 96%;
+    max-width: 1500px;
+    margin: 24px auto;
+}
+
+.gal li {
+    display: inline-block;
+    padding: 8px;
+    position: relative;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.gal a {
+    color: #17f;
+    text-decoration: none;
+}
+
+.gal h3 {
+    font-weight: 600;
+    padding: 8px 0;
+}
+
+.gal img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gal ul {
+    padding: 0;
+    margin: 0;
+}
+
+.gal ul li {
+    margin-bottom: 1em;
+}
+
+.footer {
+    background: #9b9b9b;
+    padding: 30px 0;
+    text-align: center;
+    font-family: calibri;
+}
+
+/*---------responsibidad-----------*/
+
+@media only screen and (max-width: 768px) {
+    .cabezera {
+        justify-content: space-around;
+        flex-direction: column;
+        padding: 0;
+    }
+    .info h4,
+    h3 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .logo {
+        display: flex;
+        flex-direction: column;
+        margin-block-end: 20px;
+    }
+    .menu li {
+        width: 100%;
+    }
+    .menu li a {
+        margin-top: 10px;
+        display: block;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+    }
+    .contenedor {
+        display: flex;
+        flex-flow: row wrap;
+        height: 500px;
+    }
+    .rescate {
+        display: block;
+    }
+    .crow {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 568px) {
+    .gal {
+        column-width: 200px;
+        column-count: 3;
+        column-gap: 24px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .rescate {
+        width: 80%;
+        margin: auto;
+    }
+    .crow {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

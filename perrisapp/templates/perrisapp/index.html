@@ -1,0 +1,117 @@
+{% load static from staticfiles %}
+
+
+<!DOCTYPE html>
+<html lang="es">
+{% load pwa %}
+{% load static %}
+<head>
+    {% progressive_web_app_meta %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    
+    <title>Mis perris</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/superslides.css' %}" type="text/css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'img/logo.png' %}" alt="logo">
+            <nav class="menu">
+               <ul>
+                <li><a href="{% url 'perrisapp:index' %}">inicio</a></li>
+                <li><a href="#">quienes somos</a></li>
+                <li><a href="#">servicios</a></li>
+                <li><a href="formulario">ADOPCIÓN</a></li>
+                <li><a href="accounts/login/">INGRESO</a></li> /<li><a href="accounts/signup/">REGISTRO</a>
+                <li></li>
+                <li>
+                    <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Logout</button>
+                    </form>
+                </li>
+                </ul>
+            </nav>
+
+
+        </div>
+    </header>
+
+     <div id="slides">
+         <ul class="slides-container">
+                   <li><img src="{% static 'img/adoptados/Apolo.jpg' %}" alt="Apolo"></li>
+                   <li><img src="{% static 'img/adoptados/Duque.jpg' %}" alt="Duque"></li>
+                   <li><img src="{% static 'img/adoptados/Tom.jpg' %}" alt="Tom"></li>
+            </ul>
+            <nav class="slides-navigation">
+               <a href="#" class="next">&#62;</a>
+              <a href="#" class="prev">&#60;</a>
+            </nav>
+            </div>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/jquery.superslides.js' %}"></script>
+     
+             
+                
+    <section class="contenedor-info">
+        <div class="info">
+            <h4>+ 56 9 98765431</h4>
+            <h3>Rescate y Adopcion de Perros Callejeros</h3>
+            <div class="redes-sociales">
+                <a href="#"><img src="{% static 'img/face.png' %}"></a>
+                <a href="#"><img src="{% static 'img/plus.png' %}"></a>
+                <a href="#"><img src="{% static 'img/inst.png' %}"></a>
+                <a href="#"><img src="{% static 'img/post.png' %}"></a>
+            </div>
+        </div>
+    </section>
+
+        <section class="bienvenidos">
+            <div class="contenedor">
+               <div class="rescate">
+                <h2>RESCATE</h2>
+                <h4>FINANCIAMIENTO</h4>
+                <p>Rescatamos perros en situacion de peligro y/o abandono. Los rehabilitamos y preparamos para buscarles un hogar</p>
+                <img src="{% static 'img/rescate.jpg' %}" alt="rescate">
+            </div>
+              <div class="crow">
+               <img src="{% static 'img/crowfunding.jpg' %}" alt="crowfunding">
+                <h2>CROWFUNDING</h2>
+                <h4>ETAPA UNO</h4>
+                <p>Sigues nuestras redes sociales para informarte acerca de las diversas campañas y actividades que realizamos para obtener financiamiento para seguir ayudando.</p>
+                <button type="button" class="btn_campanas">Campañas</button>
+            </div>
+        </div>
+     </section>
+
+        <section class="galeria">
+            <ul class="gal">
+                <li><a href="#"><img src="{% static 'img/rescatados/Bigotes.jpg' %}" alt="Bigotes"</a></li>
+                <li><a href="#"><img src="{% static 'img/rescatados/Luna.jpg' %}" alt="Luna"</a></li>
+                <li><a href="#"><img src="{% static 'img/rescatados/Chocolate.jpg' %}" alt="Chocolate"</a></li>
+                <li><a href="#"><img src="{% static 'img/rescatados/Maya.jpg' %}" alt="Maya"</a></li>
+                <li><a href="#"><img src="{% static 'img/rescatados/Oso.jpg' %}" alt="Oso"</a></li>
+                <li><a href="#"><img src="{% static 'img/rescatados/Pexel.jpg' %}" alt="Pexel"</a></li>
+            </ul>
+        </section>
+
+    <script type="text/javascript" src="{% static 'js/idb.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/idbop.js' %}"></script>
+    <footer class="footer">
+      <div class="contenido">
+          <p>Desarrollo Web y Mobile</p>
+      </div>
+    </footer>
+    <!-- <script>
+        if('serviceWorker' in navigator) {
+          navigator.serviceWorker
+                   .register("{% static '/sw.js' %}")
+                   .then(function() { console.log("Service Worker Registered"); });
+        }
+    </script> -->
+</body>
+
+</html>
