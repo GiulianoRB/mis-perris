@@ -4,3 +4,8 @@ if(workbox){
 }else{
         console.log('aun no funciona');
 }
+workbox.routing.registerRoute(
+    // new RegExp('.*\.js'),
+    new RegExp("% static '/' %"),
+    workbox.strategies.networkFirst()
+);
