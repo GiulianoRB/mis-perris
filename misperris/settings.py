@@ -126,3 +126,33 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'static/js/serviceworker.js')
+
+PWA_APP_NAME = 'MIS PERRIS'
+PWA_APP_DESCRIPTION = "Sitio de adopción de Perris"
+PWA_APP_THEME_COLOR = '#0A0302'
+PWA_APP_BACKGROUND_COLOR = '#ffffff'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_START_URL = '/'
+PWA_APP_ICONS = [
+    {
+        "src": "/static/img/logo/128.png",
+        "sizes": "128x128",
+        "type": "image/png"
+    }, {
+        "src": "/static/img/logo/144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+    }, {
+        "src": "/static/img/logo/152.png",
+        "sizes": "152x152",
+        "type": "image/png"
+    }, {
+        "src": "/static/img/logo/192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    }, {
+        "src": "/static/img/logo/256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+    }
+]
