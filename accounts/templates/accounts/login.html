@@ -21,6 +21,13 @@
     <input type="submit" value="Ingresa">
 </form>
 </div>
+<div class="formato">
+    <h2>O Ingresa con tus redes sociales</h2>
+    <a href="{% url 'social:begin' 'google-oauth2' %}">Google+</a>
+    <a href="{% url 'social:begin' 'Facebook' %}">Facebook</a>
+    <a href="{% url 'social:begin' 'twitter' %}">TWitter</a>
+
+</div>
 
     </form>
 </body>

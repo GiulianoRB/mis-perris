@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'perrisapp',
     'accounts',
     'pwa',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +66,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -156,3 +159,19 @@ PWA_APP_ICONS = [
         "type": "image/png"
     }
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.FacebookAppOAuth2',
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.twitter.TwitterOAuth',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+
+SOCIAL_AUTH_TWITTER_KEY = ''
+SOCIAL_AUTH_TWITTER_SECRET = ''
+
+SOCIAL_AUTH_FACEBOOK_KEY = '917016235169933'
+SOCIAL_AUTH_FACEBOOK_SECRET = '2aebf828a707fbfb80147b116b8a2020'
+
