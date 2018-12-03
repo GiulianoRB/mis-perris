@@ -6,7 +6,7 @@ from rest_framework import routers
 app_name = 'perrisapp'
 router = routers.DefaultRouter()
 router.register(r'api_mascota_listar', views.PerroListarViewSet)
-
+router.register(r'api_adoptador_listar', views.AdoptadorListarViewSet)
 
 urlpatterns = [
     url(r'^$', views.index, name="index"),
