@@ -6,6 +6,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^accounts/', include('accounts.urls')),
     url(r'^', include('perrisapp.urls')),
-    url(r'^formulario/', include('perrisapp.urls')),
-    path('', include('pwa.urls')),
+    #url(r'^formulario/', include('perrisapp.urls')),
+    path(r'pwa', include('pwa.urls')),
 ]

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'perrisapp',
     'accounts',
     'pwa',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
