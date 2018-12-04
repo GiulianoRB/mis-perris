@@ -37,10 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'django.contrib.sites',
+    
     'perrisapp',
-    'accounts',
+    #'accounts',
     'pwa',
+    'allauth.socialaccount.providers.facebook',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,7 +65,7 @@ ROOT_URLCONF = 'misperris.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'templates', 'allauth')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -156,3 +164,43 @@ PWA_APP_ICONS = [
         "type": "image/png"
     }
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+# ACCOUNT_EMAIL_REQUIRED = False
+# ACCOUNT_USERNAME_REQUIRED = False
+
+# LOGIN_URL = '/accounts/login/'
+
+LOGIN_REDIRECT_URL='/'
+
+# ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+# ACCOUNT_CONFIRM_EMAIL_ON_GET = False
+# ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = LOGIN_URL
+# ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL =None
+
+# ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
+# ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = None
+# ACCOUNT_EMAIL_SUBJECT_PREFIX = "My Subject: "
+# ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
+
+
+# ACCOUNT_LOGOUT_ON_GET =False
+#ACCOUNT_LOGOUT_REDIRECT_URL = "/accounts/login"
+# ACCOUNT_SIGNUP_FORM_CLASS = None
+# ACCOUNT_SIGNUP_PASSWORD_VERIFICATION = True
+# ACCOUNT_UNIQUE_EMAIL = True
+# ACCOUNT_USER_MODEL_USERNAME_FIELD = "username"
+# ACCOUNT_USER_MODEL_EMAIL_FIELD = "email"
+
+
+# ACCOUNT_USERNAME_MIN_LENGTH = 5
+# ACCOUNT_USERNAME_BLACKLIST = []
+# ACCOUNT_USERNAME_REQUIRED = True
+# ACCOUNT_PASSWORD_INPUT_RENDER_VALUE =False
+# ACCOUNT_PASSWORD_MIN_LENGTH = 6
+# ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True

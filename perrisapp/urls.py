@@ -7,6 +7,7 @@ app_name = 'perrisapp'
 urlpatterns = [
     url(r'^$', views.index, name = "index"),
     url(r'^formulario/$', views.formulario, name = "formulario"),
+    url(r'^registrarse/$', views.logon, name = "logon"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

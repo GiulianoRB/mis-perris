@@ -28,14 +28,10 @@
                 <li><a href="#">quienes somos</a></li>
                 <li><a href="#">servicios</a></li>
                 <li><a href="formulario">ADOPCIÓN</a></li>
-                <li><a href="accounts/login/">INGRESO</a></li> /<li><a href="accounts/signup/">REGISTRO</a>
+                <!-- <li><a href="{% url 'account_login' %}">login</a></li> / <li><a href="{% url 'account_signup' %}">Registro</a></li> -->
+                <li><a href="{% url 'perrisapp:logon' %}">login</a></li>
                 <li></li>
-                <li>
-                    <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit">Logout</button>
-                    </form>
-                </li>
+                
                 </ul>
             </nav>
 

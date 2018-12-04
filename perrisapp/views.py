@@ -9,6 +9,9 @@ from . import forms
 def index(request):
     return render(request, 'perrisapp/index.html')
 
+def logon(request):
+    return render(request, 'perrisapp/login.html')
+
 @login_required(login_url = "/accounts/login/")
 def formulario(request):
     form = forms.AdoptarPerro()
