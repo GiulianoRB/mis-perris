@@ -41,6 +41,7 @@ DJANGO_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
 )
 THIRD_PARTY_APPS = (
     'allauth',
@@ -52,6 +53,8 @@ LOCAL_APPS = (
     'perrisapp',
     'accounts',
     'pwa',
+    'api',
+
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
