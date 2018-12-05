@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^', include('perrisapp.urls')),
     #url(r'^formulario/', include('perrisapp.urls')),
     path(r'pwa', include('pwa.urls')),
+    url(r'^', include('api.urls')),
 ]
