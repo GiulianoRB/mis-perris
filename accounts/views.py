@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
+from django.dispatch import receiver
+from allauth.account.signals import user_signed_up
 
 # Create your views here.
 def signup_view(request):
@@ -34,3 +36,8 @@ def logout_view(request):
     if request.method == 'POST':
         logout(request)
         return redirect('perrisapp:index')
+
+@receiver(user_signed_up)
+def create_user_profile(request, user, **kwargs):
+    profile = Profile.objects.create(user=user)
+    profile.save()

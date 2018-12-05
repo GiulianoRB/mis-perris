@@ -1,4 +1,5 @@
 {% load static from staticfiles %}
+{% load socialaccount %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +22,21 @@
     <input type="submit" value="Ingresa">
 </form>
 </div>
+<br/>
+<br/>
+<br/>
+    <h2>Ingrese con sus redes sociales</h2>  
+  
+<div class = "formato">
+    
+        <a class="btn btn-primary btn-block" href="{% provider_login_url "facebook" method="oauth2" %}">
+            <img src="{% static '/img/logoface.png' %}"/>
+            <span class="fab fa-facebook"></span>
+             
+        </a>
 
-    </form>
+</div>
+
+
 </body>
 </html>

@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "misdoggis\\Scripts\\python.exe",
+    "python.linting.pylintEnabled": false
+}
