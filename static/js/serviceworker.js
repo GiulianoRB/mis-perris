@@ -1,26 +1,23 @@
-var staticCacheName = 'djangopwa-v1';
-
-self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open(staticCacheName).then(function(cache) {
-      return cache.addAll([
+var staticCacheName = 'djangopwa-v1'
+self.addEventListener('install', (event) => {
+    event.waitUntil(async function() {
+      const cache = await caches.open(staticCacheName);
+      await cache.addAll([
         '/'
+        // etc
       ]);
-    })
-  );
-});
+    }());
+  });
 
-self.addEventListener('fetch', function(event) {
-  var requestUrl = new URL(event.request.url);
-    if (requestUrl.origin === location.origin) {
-      if ((requestUrl.pathname === '/')) {
-        event.respondWith(caches.match('/'));
-        return;
-      }
-    }
-    event.respondWith(
-      caches.match(event.request).then(function(response) {
-        return response || fetch(event.request);
-      })
-    );
-});
+self.addEventListener('fetch', (event) => {
+    event.respondWith(async function() {
+      const cache = await caches.open(staticChacheName);
+      const cachedResponse = await cache.match(event.request);
+      if (cachedResponse) return cachedResponse;
+      const networkResponse = await fetch(event.request);
+      event.waitUntil(
+        cache.put(event.request, networkResponse.clone())
+      );
+      return networkResponse;
+    }());
+  });
