@@ -6,7 +6,7 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register(r'api_perro_listar', views.PerroListarViewSet)
-router.register(r'api_adoptador_listar', views.AdoptadorListarViewSet)
+router.register(r'api_adoptador_listar', views.AdoptadorListarViewSet, basename='api')
 
 app_name = 'api'
 
